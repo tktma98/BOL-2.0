@@ -10,23 +10,22 @@ local QRange, QSpeed, QDelay, QWidth = 900, 1500, 0.5, 110
 local WRange, WDelay = 550, 0.5
 local ERange, ESpeed, EDelay, EWidth = 660, 902, 0.5, 100
 local RDelay = .5
-local RRangeCut = 1200
 local QReady, WReady, EReady, RReady = false, false, false, false
-local possibleks1, possibleks2, possibleks3, possibleks4 = false, false, false, false
 
 
-local QHitPRE = 2
-local EHitPRE = 2
+
+local allyHeroes = {}
 local lastSkin = 0
 local dmg = {}
 local ksannouncerrange = 2000
-local allyHeroes = {}
+
 
 local TS = TargetSelector(TargetSelector_Mode.LESS_CAST, TargetSelector_DamageType.MAGIC) 
 
 local whitelistrange = 1700 
-
-
+local possibleks1, possibleks2, possibleks3, possibleks4 = false, false, false, false
+local QHitPRE = 2
+local EHitPRE = 2
 Callback.Bind("GameStart", function()
 
      OnLoad()
